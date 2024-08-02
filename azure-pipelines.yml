@@ -17,3 +17,16 @@ steps:
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
+  
+- task: Ant@1
+  displayName: 'FULL sandbox validation'
+  condition: and(succeeded(), eq(variables['Build.Reason'], 'PullRequest'), eq(variables['IsDestructive'],'False'))
+  inputs:
+      workingDirectory: SFDC-MAIN
+      buildFile: 'SFDC-MAIN/build.xml'
+      options: -Dloginurl=$(loginurl) -Dworkspace=$(workspace) -Dpassword=$(borg-koneInterface-full-pwd) -Dusername=$(borg-koneInterface-full-user) -DjarWorkspace=$(jarWorkspace) validate
+      javaHomeOption: 'JDKVersion'
+      jdkVersionOption: '1.8'
+      jdkArchitectureOption: 'x64'
+      publishJUnitResults: false
+      testResultsFiles: '**/TEST-*.xml'
