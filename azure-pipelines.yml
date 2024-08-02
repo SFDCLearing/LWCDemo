@@ -22,8 +22,8 @@ steps:
   displayName: 'FULL sandbox validation'
   condition: and(succeeded(), eq(variables['Build.Reason'], 'PullRequest'), eq(variables['IsDestructive'],'False'))
   inputs:
-      workingDirectory: SFDC-MAIN
-      buildFile: 'SFDC-MAIN/build.xml'
+      workingDirectory: "LWC Demo"
+      buildFile: 'LWC Demo/build.xml'
       options: -Dloginurl=https://venkyvenkatesh-dev-ed.my.salesforce.com -Dworkspace=$(workspace) -Dpassword=Abhi@2025 -Dusername=venkatesh@abc.com -DjarWorkspace=$(jarWorkspace) validate
       javaHomeOption: 'JDKVersion'
       jdkVersionOption: '1.8'
