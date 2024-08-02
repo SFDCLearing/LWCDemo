@@ -19,11 +19,11 @@ steps:
   displayName: 'Run a multi-line script'
   
 - task: Ant@1
-  displayName: 'FULL sandbox validation'
+  displayName: 'sandbox validation'
   condition: and(succeeded(), eq(variables['Build.Reason'], 'PullRequest'), eq(variables['IsDestructive'],'False'))
   inputs:
-      workingDirectory: "LWC Demo"
-      buildFile: 'LWC Demo/build.xml'
+      workingDirectory: "LWCDemo"
+      buildFile: 'LWCDemo/build.xml'
       options: -Dloginurl=https://venkyvenkatesh-dev-ed.my.salesforce.com -Dworkspace=$(workspace) -Dpassword=Abhi@2025 -Dusername=venkatesh@abc.com -DjarWorkspace=$(jarWorkspace) validate
       javaHomeOption: 'JDKVersion'
       jdkVersionOption: '1.8'
