@@ -24,7 +24,7 @@ steps:
   inputs:
       workingDirectory: SFDC-MAIN
       buildFile: 'SFDC-MAIN/build.xml'
-      options: -Dloginurl=$(loginurl) -Dworkspace=$(workspace) -Dpassword=$(borg-koneInterface-full-pwd) -Dusername=$(borg-koneInterface-full-user) -DjarWorkspace=$(jarWorkspace) validate
+      options: -Dloginurl=https://venkyvenkatesh-dev-ed.my.salesforce.com -Dworkspace=$(workspace) -Dpassword=Abhi@2025 -Dusername=venkatesh@abc.com -DjarWorkspace=$(jarWorkspace) validate
       javaHomeOption: 'JDKVersion'
       jdkVersionOption: '1.8'
       jdkArchitectureOption: 'x64'
