@@ -6,6 +6,9 @@ public class AccountcntPhoneupdateTest {
         for(Integer i=0;i<11;i++){
           Contact ct=New Contact(LastName='Test'+i,Phone='8106595986',AccountId=acc.Id);
             insert ct;
+
+
+
         }
     }
     @isTest 
